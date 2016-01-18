@@ -1,0 +1,20 @@
+digraph {
+	hak [label="Aslı Duman"]
+	kyn [label="Ahmet Sezer"]
+	ivi [label="Ali Demir"]
+	sal [label="Selim Kahraman"]
+	wee [label="Zeynep Hat"]
+	ame [label="Büşra Geçer"]
+		hak -> wee
+		kyn -> hak
+		kyn -> ame
+		kyn -> ivi
+		ivi -> ame
+		ivi -> wee
+		ivi -> kyn
+		sal -> wee
+		wee -> sal
+		wee -> kyn
+		ame -> kyn
+		ame -> ivi
+}

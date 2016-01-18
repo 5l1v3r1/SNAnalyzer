@@ -1,0 +1,6 @@
+Ali Demir:Büşra Geçer,Zeynep Hat,Ahmet Sezer
+Büşra Geçer:Ahmet Sezer,Ali Demir
+Zeynep Hat:Selim Kahraman,Ahmet Sezer
+Ahmet Sezer:Aslı Duman,Büşra Geçer,Ali Demir
+Selim Kahraman:Zeynep Hat
+Aslı Duman:Zeynep Hat

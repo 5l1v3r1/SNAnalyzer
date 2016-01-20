@@ -52,36 +52,43 @@ class SNAnalyzer(object):
         self.graphUpdate()
         self.graph.engine = self.engine
         self.graph.render(self.outPath, view=True)
-        print(self.network)
 
-    def addUser(self,newUser):
-        if self.aType == "tw":
-            if newUser not in self.nameIndex.keys():
-                self.nameIndex[newUser] = self.random_id(3)
-                self.network[newUser] = []
-                print(self.nameIndex)
 
-    def removeUser(self,targetUser):
-        if targetUser in self.nameIndex.keys():
-            del self.nameIndex[targetUser]
-            del self.network[targetUser]
+    def addNode(self,newNode):
+            if newNode not in self.nameIndex.keys():
+                self.nameIndex[newNode] = self.random_id(3)
+                self.network[newNode] = []
+            else:
+                print("Error: Network already has that {} named Node !".format(newNode))
+
+
+    def removeNode(self,targetNode):
+        if targetNode in self.nameIndex.keys():
+            del self.nameIndex[targetNode]
+            del self.network[targetNode]
             for key in self.network.keys():
-                if targetUser in self.network[key]:
-                    self.network[key].remove(targetUser)
+                if targetNode in self.network[key]:
+                    self.network[key].remove(targetNode)
+        else:
+            print("Error: Network not has that {} named Node !".format(targetNode))
 
 
-    def hasRelation(self,sourceUser,targetUser):
-        friends = self.network[sourceUser]
-        if targetUser in friends:
+    def hasRelation(self,sourceNode,targetNode):
+        friends = self.network[sourceNode]
+        if targetNode in friends:
             return True
         else:
             return False
 
-    def addRelation(self,sourceUser,targetUser):
-        if not self.hasRelation(sourceUser,targetUser):
-             self.network[sourceUser].append(targetUser)
+    def addRelation(self,sourceNode,targetNode):
+        if not self.hasRelation(sourceNode,targetNode):
+             self.network[sourceNode].append(targetNode)
+        else:
+            print("Error: The Node {} is already related to {} !".format(sourceNode, targetNode))
 
 
-    def removeRelation(self,sourceUser,targetUser):
-        if self.hasRelation(sourceUser,targetUser):
-             self.network[sourceUser].remove(targetUser)
+    def removeRelation(self,sourceNode,targetNode):
+        if self.hasRelation(sourceNode,targetNode):
+             self.network[sourceNode].remove(targetNode)
+        else:
+            print("Error: The Node {} is not related with {} !".format(sourceNode, targetNode))

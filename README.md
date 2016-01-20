@@ -29,3 +29,13 @@ Person Two:Friend of Person Two
 ✔ Graphing relations in different format (Facebook like or Twitter like)
 
 ✔ Graphing with different engines. (dot,neato,twopi,circo,fdp)
+
+#### ** 01-20-2016 **
+
+✔ Add/Remove new user to/from network.
+
+✔ Add/Remove relation between users in network.
+
+✔ Check error cases about them.
+
+✔ Some Bug Fixes.
